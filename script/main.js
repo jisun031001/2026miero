@@ -5,6 +5,7 @@ const m_img = document.querySelectorAll('#visual_slide > div'); //슬라이드 �
 const l_btn = document.querySelector('#visual_slide .s_btn > li:first-child'); //슬라이드 좌측버튼 변수
 const r_btn = document.querySelector('#visual_slide .s_btn > li:last-child'); //슬라이드 우측버튼 변수
 const c_btn = document.querySelectorAll('#visual_slide .ctrl_btn li'); //콘트롤 버튼 변수
+const tab_backIMg = document.querySelector('.tcon');
 
 let n = 0; //인덱스값 초기화 (콘트롤 버튼 클릭시 인덱스값이 0이 첫번째 목록이기 때문에... )
 
@@ -161,9 +162,13 @@ tab_list.forEach((tab, i)=>{
 
     //3번 탭메뉴 클릭시 부모박스의 높이(750)가 변해야 함.
     if(i==2){
-      tcon[i].parentElement.parentElement.parentElement.parentElement.style.height='900px';
+      tcon[i].parentElement.parentElement.parentElement.style.height='900px';
+      tcon[i].parentElement.parentElement.parentElement.style.height='900px';
+      tab_backIMg.style.backgroundPosition='bottom';
     }else{
-      tcon[i].parentElement.parentElement.parentElement.parentElement.style.height='600px';
+      tcon[i].parentElement.parentElement.parentElement.style.height='600px';
+      tcon[i].parentElement.parentElement.parentElement.style.height='600px';
+      tab_backIMg.style.backgroundPosition='bottom';
     }
   });
 });

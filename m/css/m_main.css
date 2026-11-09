@@ -118,10 +118,9 @@ article > h2{
 .tcon{
   width:100%;height:600px;
   background-image:url('../images/mcon2_7.png');
-  background-size: 85%;
+  background-size: 50%;
   background-repeat: no-repeat;
   background-position: center bottom;
-  overflow: hidden;
   padding:20px 1.5%;
 }
 .tcon ul{
@@ -161,7 +160,7 @@ article > h2{
   padding-bottom: 10px;
 }
 .tcon ul > li > .cont img{
-  width:90%;
+  width:60%;
 }
 
 /* 첫번째 탭콘텐츠 내용 보이게하기 */
