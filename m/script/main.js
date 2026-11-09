@@ -161,11 +161,11 @@ tab_list.forEach((tab, i)=>{
 
     //3번 탭메뉴 클릭시 부모박스의 높이(750)가 변해야 함.
     if(i==2){
-      tcon[i].parentElement.parentElement.parentElement.style.height='750px';
+      tcon[i].parentElement.parentElement.parentElement.parentElement.style.height='750px';
       tcon[i].parentElement.parentElement.parentElement.style.height='750px';
       tab_backIMg.style.backgroundPosition='bottom';
     }else{
-      tcon[i].parentElement.parentElement.parentElement.style.height='600px';
+      tcon[i].parentElement.parentElement.parentElement.parentElement.style.height='600px';
       tcon[i].parentElement.parentElement.parentElement.style.height='600px';
       tab_backIMg.style.backgroundPosition='bottom';
     }
