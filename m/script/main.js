@@ -173,9 +173,75 @@ tab_list.forEach((tab, i)=>{
 });
 
 // 3. 이벤트 슬라이드 구현하기
+//변수 선언
+const sw = document.querySelector('.s_wrap');
+const e_lbtn = document.querySelector('#event i.fa-angle-left');
+const e_rbtn = document.querySelector('#event i.fa-angle-right');
+let cont = 0;
+let sn = document.querySelectorAll('.s_wrap figure');
 
-//
+let s_total = sn.length; //슬라이드 개수
+console.log(s_total);
 
+const fig = 100; //슬라이드 1장의 너비 100%
+sw.style.width = fig*s_total+'%'; //300%
+console.log(sw.style.width);
+
+//좌측버튼 클릭시 슬라이드 왼쪽으로 이동하기, 시간제거
+e_lbtn.addEventListener('click', ()=>{
+  clearInterval(Timer2);
+
+  if(cont>0){ //만약 cont가 0보다 크면
+    mslide(cont-1);
+  }else{
+    mslide(s_total-1);
+  }
+});
+//우측버튼 클릭시 슬라이드 오른쪽으로 이동하기, 시간제거
+e_rbtn.addEventListener('click', ()=>{
+  clearInterval(Timer2);
+
+  if(cont<s_total-1){ //만약 cont가 2보다 작으면
+    mslide(cont+1);
+  }else{
+    mslide(0);
+  }
+});
+
+// 버튼 마우스 아웃시 시간 다시 재생
+e_lbtn.addEventListener('mouseleave', ()=>{
+  Timer2 = setInterval(function(){
+  if(cont<s_total-1){ //만약 cont가 2보다 작으면
+    mslide(cont+1);
+  }else{
+    mslide(0);
+  }
+  },3000);
+});
+e_rbtn.addEventListener('mouseleave', ()=>{
+  Timer2 = setInterval(function(){
+  if(cont<s_total-1){ //만약 cont가 2보다 작으면
+    mslide(cont+1);
+  }else{
+    mslide(0);
+  }
+  },3000);
+});
+
+// 매시간마자 반복 호출하여 자동으로 움직이게 하기
+function mslide(n){
+  sw.style.left = fig*-n+'%';
+  cont = n;
+  console.log(sw.style.left);
+}
+// 3초마다 0,1,2값을 mslide에 넘기기
+let Timer2 = setInterval(function(){
+  if(cont<s_total-1){ //만약 cont가 2보다 작으면
+    mslide(cont+1);
+  }else{
+    mslide(0);
+  }
+},3000);
 
 // 4. 윈도우 스크롤 값을 사용하여 top버튼 보이고/숨기기(common.js에 작성)
 
