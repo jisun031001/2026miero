@@ -68,7 +68,7 @@ article > h2{
 /* 2. 뉴스 콘텐츠 영역 서식 */
 #news_con{
   width:100%;
-  margin:0;
+  margin:50px 0;
   display:flex;
   flex-direction: column;
   padding:0 3% 50px 3%;
@@ -135,8 +135,8 @@ article > h2{
 .tcon ul > li > a{
   color:var(--f_color02);
   background-color:var(--bg_color02);
-  padding:10px 25px;
-  font-size:0.6rem;
+  padding:10px 10px;
+  font-size:0.9rem;
 }
 
 .t_on{background:var(--bg_color01) !important;}

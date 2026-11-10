@@ -188,20 +188,25 @@ article > h2{
 }
 
 /* 이벤트 영역 서식 */
-#event{position: relative;}
+#event > article{width: 1200px; margin: 0 auto; position: relative;}
 .e_inner{
-  width: 1200px;
-  margin: 0 auto;
+  position: relative;
+  width: 1100px;
+  margin: 0px auto;
   overflow: hidden;
 }
 .e_inner ul{
+  position: relative;
+  width: 3300px;
   display: flex;
+  transition: 0.5s;
 }
 .e_inner ul li{
-  width: 100%;
+  width: 1100px;
   display: flex;
   flex-shrink: 0;
   justify-content: space-between;
+  box-sizing: border-box;
 }
 .e_inner ul li a{
   width: 800px;
@@ -225,7 +230,7 @@ article > h2{
 .e_inner ul li div p{font-size: 15px;}
 
 /* 이벤트 영역 좌, 우버튼 서식 */
-#event .e_inner .fas{
+#event article .fas{
   position: absolute;
   top: 50%;
   z-index: 100;
@@ -234,8 +239,8 @@ article > h2{
   padding: 7px 5px;
   border-radius: 50%;
 }
-#event .e_inner i.fa-angle-left{left: 300px;}
-#event .e_inner i.fa-angle-right{right: 500px;}
+#event i.fa-angle-left{left: 0px;}
+#event i.fa-angle-right{right: 0px;}
 
 /* 제목, 문단 서식 */
 #product > article > ul > li h3{
@@ -253,38 +258,6 @@ article > h2{
   line-height:180%;
   color:#986c02;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* 이벤트 영역 좌, 우버튼 서식 */
-.e_btn{
-  position:absolute;left:3%;top:80%;
-  display:none;z-index:100;
-  
-}
-.e_btn li{
-  background-color:#efefef;
-  padding:12px 6px;
-  margin-right:10px;
-}
-.e_btn li:hover{cursor:pointer;}
-.e_btn li i{font-size:30px;}
-
 /* 콘텐츠 공통 레이아웃 */
 #tab_con, #product, #event{
   padding:60px 0px;

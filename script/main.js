@@ -173,10 +173,80 @@ tab_list.forEach((tab, i)=>{
   });
 });
 
-// 3. 이벤트 슬라이드 구현하기
+// 3. 이벤트 슬라이드 구현하기 (PC 버전 - 최종 수정)
+const sw = document.querySelector('.e_inner ul');
+const e_lbtn = document.querySelector('#event .fa-angle-left');
+const e_rbtn = document.querySelector('#event .fa-angle-right');
+let cont = 0;
+let sn = document.querySelectorAll('.e_inner ul li');
 
-//
+let s_total = sn.length; // 슬라이드 개수 (3개)
+console.log('슬라이드 개수:', s_total);
 
+const slideWidth = 1100; // 슬라이드 1개의 가로 크기 (.e_inner 너비와 동일)
+sw.style.width = (slideWidth * s_total) + 'px'; // 전체 ul 너비 설정 (3300px)
+
+let Timer2 = null;
+
+// 자동 슬라이드 시작 함수
+function startAutoSlide() {
+  clearInterval(Timer2); 
+  
+  Timer2 = setInterval(function() {
+    if (cont < s_total - 1) {
+      mslide(cont + 1);
+    } else {
+      mslide(0);
+    }
+  }, 3000);
+}
+
+// 자동 슬라이드 정지 함수
+function stopAutoSlide() {
+  clearInterval(Timer2);
+}
+
+// 좌측버튼 클릭시
+e_lbtn.addEventListener('click', () => {
+  // alert('ok');
+  stopAutoSlide();
+  
+  if (cont > 0) {
+    mslide(cont - 1);
+  } else {
+    mslide(s_total - 1);
+  }
+});
+
+// 우측버튼 클릭시
+e_rbtn.addEventListener('click', () => {
+  stopAutoSlide();
+  
+  if (cont < s_total - 1) {
+    mslide(cont + 1);
+  } else {
+    mslide(0);
+  }
+});
+
+// 마우스 오버/아웃 이벤트
+e_lbtn.addEventListener('mouseenter', stopAutoSlide);
+e_rbtn.addEventListener('mouseenter', stopAutoSlide);
+e_lbtn.addEventListener('mouseleave', startAutoSlide);
+e_rbtn.addEventListener('mouseleave', startAutoSlide);
+
+// 슬라이드 이동 함수 (픽셀 단위로 정확하게 이동)
+function mslide(n) {
+  sw.style.left = (slideWidth * -n) + 'px';
+  cont = n;
+  console.log('현재 슬라이드 번호:', cont);
+}
+
+// 초기 실행
+startAutoSlide();
+
+// 페이지 로드 시 자동 슬라이드 최초 실행
+startAutoSlide();
 
 // 4. 윈도우 스크롤 값을 사용하여 top버튼 보이고/숨기기(common.js에 작성)
 
