@@ -188,7 +188,7 @@ article > h2{
 }
 
 /* 이벤트 영역 서식 */
-#event{}
+#event{position: relative;}
 .e_inner{
   width: 1200px;
   margin: 0 auto;
@@ -225,17 +225,17 @@ article > h2{
 .e_inner ul li div p{font-size: 15px;}
 
 /* 이벤트 영역 좌, 우버튼 서식 */
-#event .slide i.fas{
+#event .e_inner .fas{
   position: absolute;
-  top: 25%;
+  top: 50%;
   z-index: 100;
   font-size: 1rem;
   border:  2px solid #333;
-  padding: 5px 5px;
+  padding: 7px 5px;
   border-radius: 50%;
 }
-#event .slide i.fa-angle-left{left: 1%;}
-#event .slide i.fa-angle-right{right: 1%;}
+#event .e_inner i.fa-angle-left{left: 300px;}
+#event .e_inner i.fa-angle-right{right: 500px;}
 
 /* 제목, 문단 서식 */
 #product > article > ul > li h3{
